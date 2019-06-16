@@ -6,7 +6,6 @@ wForm.addEventListener('submit', (e)=>{
     e.preventDefault();
     const address = weatherText.value;
     msg1.innerText = 'Loading...'
-    msg2.innerText = '';
     fetch('http://localhost:3000/weather?address='+address).then((response)=>{
         response.json().then((data)=>{
             if(data.error)

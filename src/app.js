@@ -6,7 +6,7 @@ var publicPath = path.join(__dirname, '../public');
 var partialsPath = path.join(__dirname, '../partials')
 var geocode = require('./utils/geocode');
 var forecast = require('./utils/forecast');
-
+ 
 
 app.use(express.static(publicPath))
 hbs.registerPartials(partialsPath);
