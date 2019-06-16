@@ -1,0 +1,47 @@
+body{
+    font-family: arial;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 650px;
+    margin: 0 auto;
+    color: #383838
+}
+
+.mainContent{
+    flex-grow: 1;
+}
+
+.pageTitle{
+    font-size: 64px;
+}
+
+.navbar a{
+    margin-right: 16px;
+    cursor:pointer;
+    text-decoration: none;
+    color:#888888
+}
+
+.footer{
+    border-top: 1px solid #cccccc;
+    padding:20px 0;
+    color: #b8a9a9
+}
+
+.aboutMePic{
+    height: 250px;
+    width:150px;
+}
+
+#weatherText{
+    padding:6px;
+}
+#weatherButton
+{
+    padding: 6px;
+    background-color: #383838;
+    color:white;
+    border:2px solid #383838;
+}
+
