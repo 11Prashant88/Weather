@@ -1,5 +1,4 @@
 var request = require('request')
-var chalk = require('chalk');
 
 const geocode = function(address, callback)
 {
