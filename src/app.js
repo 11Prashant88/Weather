@@ -4,7 +4,7 @@ var app = express();
 const port = process.env.PORT || 3000;
 
 var hbs = require('hbs')
-var path = require('path')
+var path = require('path') 
 var publicPath = path.join(__dirname, '../public');
 var partialsPath = path.join(__dirname, '../partials')
 var geocode = require('./utils/geocode');
