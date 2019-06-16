@@ -1,5 +1,8 @@
 var express = require('express');
 var app = express();
+
+const port = process.env.PORT || 3000;
+
 var hbs = require('hbs')
 var path = require('path')
 var publicPath = path.join(__dirname, '../public');
@@ -54,6 +57,6 @@ app.get('/weather', (req,res)=>{
     })
 })
 
-app.listen(3000, ()=>{
-    console.log('app listening on port:3000')
+app.listen(port, ()=>{
+    console.log('app listening on port:'+port)
 })
