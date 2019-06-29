@@ -5,7 +5,7 @@ const hbs = require('hbs');
 var geocode = require('./utils/geocode.js');
 var forecast = require('./utils/forecast.js');
 
-const port = 3000 || process.env.PORT;
+const port = process.env.PORT || 3000;
 
 const publicPath = path.join(__dirname, '../public');
 app.use(express.static(publicPath));
