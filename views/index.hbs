@@ -1,20 +1,21 @@
 <html>
     <head>
-        <link rel="stylesheet" href="/css/styles.css"></link>
-        <link rel="icon", href="/img/weather.png">
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="icon" href="/img/weather.jpg">
     </head>
     <body>
-        <div class="mainContent">
+        <div class="main-content">
             {{>header}}
-            <p>Use this site to get weather details</p>
-            <form class="weatherForm">
-                <input placeholder="Location" id="weatherText" type="text">
-                <button type="submit" id="weatherButton">Search</button>
+            <p>{{detailsText}}</p>
+            <form>
+                <input type="text" id="locationInput" placeholder="Provide location here">
+                <button style="cursor:pointer" id="locationSubmitButton" type="submit">Search</button>
             </form>
-            <p id="messageOne"></p>
-            <p id="messageTwo"></p>
+            <p id="msg1"></p>
+            <p id="msg2"></p>
         </div>
-        {{>footer}}
-        <script style="text/javascript" src="/js/app.js"></script>
+        <p>{{>footer}}</p>
+
+        <script type="text/javascript" src="/js/app.js"></script>
     </body>
 </html>

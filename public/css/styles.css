@@ -1,47 +1,95 @@
+*{
+    box-sizing: border-box;
+}
 body{
-    font-family: arial;
+    color:#333333;
+    font-family:arial;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    max-width: 650px;
-    margin: 0 auto;
-    color: #383838
+    max-width:650px;
+    margin:0 auto; 
+    
 }
 
-.mainContent{
-    flex-grow: 1;
+.main-content{
+    flex-grow:1;
 }
 
-.pageTitle{
-    font-size: 64px;
-}
-
-.navbar a{
-    margin-right: 16px;
-    cursor:pointer;
-    text-decoration: none;
-    color:#888888
+.title{
+    font-size:40px
 }
 
 .footer{
     border-top: 1px solid #cccccc;
-    padding:20px 0;
-    color: #b8a9a9
+    padding : 20px 0px;
+    margin-bottom: -10px;
+    color:#888888;
 }
 
-.aboutMePic{
-    height: 250px;
-    width:150px;
+.aboutPic{
+    width:200px;
+    height: 300px;
 }
 
-#weatherText{
-    padding:6px;
+#locationInput{
+    padding:4px;
 }
-#weatherButton
-{
-    padding: 6px;
-    background-color: #383838;
+
+#locationSubmitButton{
+    padding:4px;
+    border: 2px solid dodgerblue;
+    background-color: dodgerblue;
     color:white;
-    border:2px solid #383838;
 }
 
+.bg-img{
+    background-image: url("/img/BgWeather.jpg");
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
+    -webkit-filter: blur(4px);
+}
+
+.main-nav{
+    display: inline-block;
+    padding: 0px;
+    margin:0px;
+    width:calc(100% - 70px);
+    text-align: right;
+}
+
+.main-nav-items{
+    padding:0px;
+    margin:0px
+}
+
+.man-nav-item{
+    display: inline-block;
+    padding:10px 0;
+    margin: 0 10px;
+}
+
+.main-nav a{
+    color: white;
+    text-decoration: none;
+}
+
+.main-nav a:hover, 
+.main-nav a:active{
+    border-bottom: 4px solid white;
+}
+
+.main-header{
+    background-color: #333333;
+}
+
+.main-header > div{
+    color:white;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.main-header-brand{
+    font-size:20px;
+    margin-left:10px
+}

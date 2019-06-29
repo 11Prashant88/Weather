@@ -1,23 +1,30 @@
-var request = require('request')
+const request = require('request');
 
-const forecast = function(lat, long, callback)
-{
-    var url = 'https://api.darksky.net/forecast/8eec5f85604e55fc39fee515c077b466/'+lat+','+long+'?units=si';
+const forecast = (latitude, longitude, callback)=>{
+    var url = "https://api.darksky.net/forecast/8eec5f85604e55fc39fee515c077b466/"+latitude+","+longitude+"?units=si";
 
-    request({url:url, json:true}, (error, {body})=>{
-        if(error)
+    request({url:url, json:true}, (err,res)=>{
+
+        var tempSymbol = '°F';
+        if(res.body.flags.units == 'si')
         {
-            callback('cant reach server, please check internet connectivity', undefined);
+            tempSymbol = '°C';
         }
-        else if(body.error)
+
+        if(err)
         {
-            callback('please provide correct details', undefined);
+            callback("Unable to connect to server, please check internet connection", undefined);
+        }
+        else if(res.body.error)
+        {
+            callback("Please provide correct latitude and longitude details", undefined)
         }
         else
         {
-            var tempUnit = body.flags.units === 'us' ? '°F' : '°C';
-            callback(undefined,body.daily.data[0].summary + ' Current temperature is '+ body.currently.temperature +' '+tempUnit+'. There is '+body.currently.precipProbability+'% chance of rain.');
+            callback(undefined,{forecast:res.body.daily.data[0].summary + " Current temperature is "+ res.body.currently.temperature+" "+tempSymbol+". There is "+res.body.currently.precipProbability+" % chance of rain."})
         }
     })
 }
+
+
 module.exports = forecast;

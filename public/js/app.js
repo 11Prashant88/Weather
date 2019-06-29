@@ -1,24 +1,30 @@
-var address = document.querySelector('#weatherText');
-var wForm = document.querySelector('.weatherForm');
-var msg1 = document.querySelector('#messageOne');
-var msg2 = document.querySelector('#messageTwo');
-wForm.addEventListener('submit', (e)=>{
+const weatherForm = document.querySelector("form");
+
+const msg1 = document.querySelector("#msg1");
+const msg2 = document.querySelector("#msg2");
+
+weatherForm.addEventListener('submit', (e)=>{
     e.preventDefault();
-    const address = weatherText.value;
-    msg1.innerText = 'Loading...'
-    msg2.innerText = '';
-    fetch('/weather?address='+address).then((response)=>{
-        response.json().then((data)=>{
-            if(data.error)
-            {
-                msg1.textContent = data.error;
-                msg2.textContent = '';
-            }
-            else
-            {
-                msg1.textContent = data.location;
-                msg2.textContent = data.forecast;
-            }
-        })
-    }, (error)=>{msg1.textContent = 'plese check internet connectivity'})
+    const address = document.querySelector("#locationInput").value
+    msg1.textContent = "loading...";
+    msg2.textContent = '';
+
+    const url = "http://localhost:3000/weather?address="+address
+    fetch(url).then(
+        (response)=>{
+            response.json().then(
+                (data)=>{
+                    if(data.error)
+                    {
+                        msg1.textContent = data.error;
+                    }
+                    else
+                    {
+                        msg1.textContent = data.location;
+                        msg2.textContent = data.forecast;
+                    }
+                }
+            )
+        }
+    )
 })
